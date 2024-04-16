@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Taller Rosado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/b1b47db464.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <h1 class="text-center my-1">Taller Rosado</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto my-2">
+              <li>
+                <form class="d-flex align-items-center p-3" action="administrador.php" method="GET">
+                  <label for="InputBuscar" class="me-2"></label>
+                  <select name="InputBuscar" id="InputBuscar" class="form-select me-2">
+                    <option value="">Seleccionar producto</option>
+                  </select>
+                  <button type="submit" name="Buscador" class="btn btn-primary">Buscar</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Example single danger button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Perfil
+      </button>
+      <ul class="dropdown-menu">
+        <!--<li><a class="dropdown-item" href="#">Action</a></li>-->
+        <li><a class="dropdown-item" href="#">Contactanos</a></li>
+        <li><a class="dropdown-item" href="#">Acerca de</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="d-flex justify-content-center align-items-center flex-column">
+    <nav class="navbar bg-body mt-2">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-3 input-largo" type="search" placeholder="Buscar Producto" aria-label="Search">
+          <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+
+  <section class="container">
+    <!--INICIO DEL PRIMER MODAL-->
+    <div class="card">
+      <!--INICIO DEL MODAL-->
+      <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Registro empleado</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="m-4 p-4 " method="POST" id="FormularioEmpleado">
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Nombre <a href=""><i
+                        class="fa-solid fa-magnifying-glass p-3"></i></a></label>
+                  <input name="Nombre" type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombres"
+                    value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Apellido</label>
+                  <input name="Apellido" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Apellidos" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Telefono</label>
+                  <input name="Telefono" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Telefono" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Correo</label>
+                  <input name="Correo" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Correo @" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Salario</label>
+                  <input name="Salario" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Salario" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Dirección</label>
+                  <input name="Dirección" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Salario" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Contraseña</label>
+                  <input name="Contraseña" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Contraseña" value="">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Roll De Empleado</label>
+                  <select class="form-select" aria-label="Default select example" name="Roll"
+                    placeholder="Seleccione El Producto">
+                    <option selected>Selecciona El Roll</option>
+
+                  </select>
+                </div>
+                <!--<div class="botones">
+                    <button type="submit" class="btn btn-primary btn-lg" name="aceptar" value="ok">ACEPTAR</button>
+                    <a type="submit" class="btn btn-danger btn-lg" href="../administrador.php" value="ok">CANCELAR</a>
+                </div>-->
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                data-bs-toggle="modal">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FINAL DEL MODAL
+
+      AL PRESIONAR EL A DE REGISTRO EMPLEADO DESGLOZA LA VENTANA DE MODAL-->
+      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" style="text-decoration: none;">
+        <h2>Registrar empleado</h2>
+        <p>Registrar información del empleado</p>
+      </a>
+      <!--FINAL DEL BOTON-->
+    </div>
+
+    <!--INICIO DEL SEGUNDO MODAL-->
+    <div class="card">
+      <div class="modal fade" id="exampleModalToggle3" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Registro producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="m-4 p-4 " method="POST">
+                <div class="mb-1">
+                  <div style="display: flex; align-items: center;">
+                    <label for="formGroupExampleInput" class="form-label" style="margin-right: 10px;">Nombre</label>
+                    <p>
+                      <a class="btn" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa-solid fa-plus" style="color: #ff1900;"></i>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="collapse" id="collapseExample1">
+                    <div class="card card-body">
+                      <label for="formGroupExampleInput" class="form-label">Nombre de producto</label>
+                      <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                        placeholder="Nombre" value="">
+                      <button class="btn btn-primary m-2" data-bs-target="#exampleModalTogglea"
+                        data-bs-toggle="modal">Guardar</button>
+                    </div>
+                  </div>
+
+                  <select class="form-select" aria-label="Default select example" name="Nombre"
+                    placeholder="Seleccione El Producto">
+
+                  </select>
+                </div>
+                <div class="mb-1">
+                  <div style="display: flex; align-items: center;">
+                    <label for="formGroupExampleInput" class="form-label" style="margin-right: 10px;">Marca</label>
+                    <p>
+                      <a class="btn" data-bs-toggle="collapse" href="#collapseExample3" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa-solid fa-plus" style="color: #ff1900;"></i>
+                      </a>
+                    </p>
+                  </div>
+                  <!-- -->
+                  <div class="collapse" id="collapseExample3">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Registrar Marca Nueva</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close2"></button>
+                        </div>
+                        <div class="modal-body">
+                          <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                            placeholder="Nombre" value="">
+                          <button class="btn btn-primary m-2" data-bs-target="#exampleModalToggleb"
+                            data-bs-toggle="modal">Guardar</button>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- -->
+                  </div>
+                  <select class="form-select" aria-label="Default select example" name="Marca">
+
+
+                  </select>
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Cantidad</label>
+                  <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Cantidad del producto" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Precio</label>
+                  <input name="Precio" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Precio del producto" value="">
+                </div>
+                <div class="mb-1">
+                  <label for="formGroupExampleInput" class="form-label">Descripcion</label>
+                  <input name="Descripcion" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Descripcion del producto" value="">
+                </div>
+                <div class="botones">
+                  <!--<button type="submit" class="btn btn-primary btn-lg" name="aceptar" value="ok">ACEPTAR</button>-->
+
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle4"
+                data-bs-toggle="modal">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FINAL DEL MODAL
+
+      BOTON PARA APARECER EL MODAL-->
+      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle3" style="text-decoration: none;">
+        <h2>Registrar productos</h2>
+        <p>Registrar información del producto</p>
+      </a>
+      <!--FINAL DEL BOTON-->
+    </div>
+
+    <!--<div class="container">
+      <h3 style="text-align: center;">Información de los Empleados</h3>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+
+            <th scope="col">Nombre</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Modificar</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>Fros</td>
+            <td>Honda</td>
+            <td>10</td>
+            <td>$1200</td>
+            <td>Medio Uso</td>
+            <td style="display: flex; align-items: center;">
+              <div class="">
+                <div class="modal fade" id="exampleModalToggle5" aria-labelledby="exampleModalToggleLabel5"
+                  tabindex="-1" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel5">Modificar producto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="m-4 p-4 " method="POST">
+                          <div class="mb-1">
+                            <div style="display: flex; align-items: center;">
+                              <label for="formGroupExampleInput" class="form-label"
+                                style="margin-right: 10px;">Nombre</label>
+                              <p>
+                                <a class="btn" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                                  aria-expanded="false" aria-controls="collapseExample">
+                                  <i class="fa-solid fa-plus" style="color: #ff1900;"></i>
+                                </a>
+                              </p>
+                            </div>
+
+                            <div class="collapse" id="collapseExample1">
+                              <div class="card card-body">
+                                <label for="formGroupExampleInput" class="form-label">Nombre de producto</label>
+                                <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Nombre" value="">
+                                <button class="btn btn-primary m-2" data-bs-target="#exampleModalTogglea"
+                                  data-bs-toggle="modal">Guardar</button>
+                              </div>
+                            </div>
+
+                            <select class="form-select" aria-label="Default select example" name="Nombre"
+                              placeholder="Seleccione El Producto">
+
+                            </select>
+                          </div>
+                          <div class="mb-1">
+                            <div style="display: flex; align-items: center;">
+                              <label for="formGroupExampleInput" class="form-label"
+                                style="margin-right: 10px;">Marca</label>
+                              <p>
+                                <a class="btn" data-bs-toggle="collapse" href="#collapseExample3" role="button"
+                                  aria-expanded="false" aria-controls="collapseExample">
+                                  <i class="fa-solid fa-plus" style="color: #ff1900;"></i>
+                                </a>
+                              </p>
+                            </div>
+
+                            <div class="collapse" id="collapseExample3">
+                              <div class="card card-body">
+                                <label for="formGroupExampleInput" class="form-label">Nombre de marca</label>
+                                <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Nombre" value="">
+                                <button class="btn btn-primary m-2" data-bs-target="#exampleModalToggleb"
+                                  data-bs-toggle="modal">Guardar</button>
+                              </div>
+                            </div>
+                            <select class="form-select" aria-label="Default select example" name="Marca">
+
+
+                            </select>
+                          </div>
+                          <div class="mb-1">
+                            <label for="formGroupExampleInput" class="form-label">Cantidad</label>
+                            <input name="Cantidad" type="text" class="form-control" id="formGroupExampleInput"
+                              placeholder="Cantidad del producto" value="">
+                          </div>
+                          <div class="mb-1">
+                            <label for="formGroupExampleInput" class="form-label">Precio</label>
+                            <input name="Precio" type="text" class="form-control" id="formGroupExampleInput"
+                              placeholder="Precio del producto" value="">
+                          </div>
+                          <div class="mb-1">
+                            <label for="formGroupExampleInput" class="form-label">Descripcion</label>
+                            <input name="Descripcion" type="text" class="form-control" id="formGroupExampleInput"
+                              placeholder="Descripcion del producto" value="">
+                          </div>
+                          <div class="botones">
+                            <button type="submit" class="btn btn-primary btn-lg" name="aceptar" value="ok">ACEPTAR</button>
+
+                          </div>
+
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle5"
+                          data-bs-toggle="modal">Guardar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                FINAL DEL MODAL
+                BOTON PARA APARECER EL MODAL
+                <a class="btn btn-small btn-primary" href="#" data-bs-toggle="modal"
+                  data-bs-target="#exampleModalToggle3" style="text-decoration: none;">
+                  <i class="fa-solid fa-user-pen"></i>
+                </a>
+                FINAL DEL BOTON
+              </div>
+
+              <a href="vistas/vender_adm.php?id=<?= $datos->Id_Union ?>" class="btn btn-small btn-warning"><i
+                  class="fa-solid fa-cart-shopping"></i></a>
+              <a onclick="return eliminar()" href="administrador.php?id=<?= $datos->Id_Union ?>"
+                class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+
+
+
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>-->
+
+  </section>
+
+
+  <div class="accordion m-5 p-3" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          LLista De productos
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Salario</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Contraseña </th>
+                <th scope="col">Roll </th>
+                <th scope="col"> </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>Jesus</td>
+                <td>Magaña</td>
+                <td>9821318824</td>
+                <td>al067606@uacam.mx</td>
+                <td>$1200</td>
+                <td>Ex Hacienda</td>
+                <td> 1234</td>
+                <td>administrador</td>
+                <td style="display: flex; align-items: center;">
+                  <div class="">
+                    <div class="modal fade" id="exampleModalToggle34" aria-labelledby="exampleModalToggleLabel"
+                      tabindex="-1" aria-hidden="true" style="display: none;">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modificar producto</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="m-1 p-1 " method="POST">
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Nombre </label>
+                                <input name="Nombre" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Nombres" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Apellido</label>
+                                <input name="Apellido" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Apellidos" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+                                <input name="Telefono" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Telefono" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Correo</label>
+                                <input name="Correo" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Correo @" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Salario</label>
+                                <input name="Salario" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Salario" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Dirección</label>
+                                <input name="Dirección" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Salario" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
+                                <input name="Contraseña" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Contraseña" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="exampleInputEmail" class="form-label">Roll De Empleado</label>
+                                <select class="form-select" aria-label="Default select example" name="Roll"
+                                  placeholder="Seleccione El Producto">
+                                  <option selected>Selecciona El Roll</option>
+
+                                </select>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle34"
+                              data-bs-toggle="modal">Guardar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="btn btn-small btn-primary" href="#" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalToggle34" style="text-decoration: none;">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </a>
+                  </div>
+                  <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-cart-shopping"></i></a>
+                  <a onclick="return eliminar()" href="" class="btn btn-small btn-danger"><i
+                      class="fa-solid fa-trash"></i></a>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          Lista de empleados
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Salario</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Contraseña </th>
+                <th scope="col">Roll </th>
+                <th scope="col"> </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>Jesus</td>
+                <td>Magaña</td>
+                <td>9821318824</td>
+                <td>al067606@uacam.mx</td>
+                <td>$1200</td>
+                <td>Ex Hacienda</td>
+                <td> 1234</td>
+                <td>administrador</td>
+                <td style="display: flex; align-items: center;">
+                  <div class="">
+                    <div class="modal fade" id="exampleModalToggle3" aria-labelledby="exampleModalToggleLabel"
+                      tabindex="-1" aria-hidden="true" style="display: none;">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modificar producto</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="m-4 p-4 " method="POST" id="FormularioEmpleado">
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Nombre <a href=""><i
+                                      class="fa-solid fa-magnifying-glass p-3"></i></a></label>
+                                <input name="Nombre" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Nombres" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Apellido</label>
+                                <input name="Apellido" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Apellidos" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Telefono</label>
+                                <input name="Telefono" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Telefono" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Correo</label>
+                                <input name="Correo" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Correo @" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Salario</label>
+                                <input name="Salario" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Salario" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Dirección</label>
+                                <input name="Dirección" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Salario" value="">
+                              </div>
+                              <div class="mb-1">
+                                <label for="formGroupExampleInput" class="form-label">Contraseña</label>
+                                <input name="Contraseña" type="text" class="form-control" id="formGroupExampleInput"
+                                  placeholder="Contraseña" value="">
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Roll De Empleado</label>
+                                <select class="form-select" aria-label="Default select example" name="Roll"
+                                  placeholder="Seleccione El Producto">
+                                  <option selected>Selecciona El Roll</option>
+
+                                </select>
+                              </div>
+                              <!--<div class="botones">
+                                  <button type="submit" class="btn btn-primary btn-lg" name="aceptar" value="ok">ACEPTAR</button>
+                                  <a type="submit" class="btn btn-danger btn-lg" href="../administrador.php" value="ok">CANCELAR</a>
+                              </div>-->
+
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                              data-bs-toggle="modal">Guardar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--FINAL DEL MODAL
+                    BOTON PARA APARECER EL MODAL-->
+                    <a class="btn btn-small btn-primary" href="#" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalToggle3" style="text-decoration: none;">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </a>
+                    <!--FINAL DEL BOTON-->
+                  </div>
+
+                  <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-cart-shopping"></i></a>
+                  <a onclick="return eliminar()" href="" class="btn btn-small btn-danger"><i
+                      class="fa-solid fa-trash"></i></a>
+
+
+
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

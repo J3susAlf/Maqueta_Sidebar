@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*ESTILO PARA EL NAVBAR*/
+.header-container {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  margin-left: 0px;
+  padding: 10px;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+header h1 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+header img {
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+/*FINAL DE NAVBAR*/
+
+/*FINAL DE BOTONES LATERALES*/
+
+/*INFORMACION */
+section {
+  margin-top: 40px;
+  margin-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+}
+
+
+.card {
+  width: 200px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/*FINAL DE INFORMACION*/
+
+/*BUSCADOR MAS LARGO*/
+.input-largo {
+  width: 400px; /* o cualquier otro valor que desees */
+}
+
+
